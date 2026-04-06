@@ -224,7 +224,7 @@ export default function AboutSection() {
                 >
                   {/* timeline dot */}
                   <div
-                    className={`relative z-10 flex-shrink-0 w-16 h-16 rounded-full ${step.color} flex items-center justify-center group-hover:scale-110 trasition-transform duration-300`}
+                    className={`relative z-10 flex-shrink-0 w-16 h-16 rounded-full ${step.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
                   >
                     <step.icon size={24} className="text-white" />
                   </div>
@@ -235,16 +235,16 @@ export default function AboutSection() {
                       : "bg-white/80 border-gray-200 group-hover:border-gray-300 group-hover:bg-white"
                       } backdrop-blur-sm`}
                   >
-                    <div className="flex item-center justify-between mb-">
+                    <div className="flex items-center justify-between gap-4 mb-4">
                       <h4 className="text-xl font-medium">{step.title}</h4>
-                      <span
-                        className={`text-sm px-3 py-1 rounded-full ${isDarkMode
+                      <div
+                        className={`inline-flex min-w-[48px] items-center justify-center rounded-full px-2 py-1 text-xs sm:text-sm font-medium whitespace-nowrap ${isDarkMode
                           ? "bg-gray-700 text-gray-300"
                           : "bg-gray-100 text-gray-700"
                           }`}
                       >
                         {step.year}
-                      </span>
+                      </div>
                     </div>
                     <div
                       className={`text-sm font-medium ${isDarkMode ? "text-blue-400" : "text-blue-600"
