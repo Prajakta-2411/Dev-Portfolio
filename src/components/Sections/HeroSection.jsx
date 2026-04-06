@@ -85,7 +85,7 @@ export default function HeroSection() {
 
         <div className="max-w-7xl mx-auto w-full z-10 mt-20">
           {/* Mobile layout - centered */}
-          <div className="block lg:hidden">
+          <div className="block lg:hidden mb-20">
             <motion.div
               initial="hidden"
               animate="visible"
