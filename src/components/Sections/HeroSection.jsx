@@ -224,43 +224,45 @@ export default function HeroSection() {
               {/* Tech stack - Mobile */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-wrap justify-center items-center gap-3 text-xs uppercase tracking-widest"
+                className="text-center text-xs uppercase tracking-widest"
               >
-                <span
-                  className={isDarkMode ? "text-gray-600" : "text-gray-500"}
-                >
-                  React JS
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-700" : "text-gray-400"}
-                >
-                  |
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-600" : "text-gray-500"}
-                >
-                  JavaScript
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-700" : "text-gray-400"}
-                >
-                  |
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-600" : "text-gray-500"}
-                >
-                  Material UI
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-700" : "text-gray-400"}
-                >
-                  |
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-600" : "text-gray-500"}
-                >
-                  Tailwind CSS
-                </span>
+                <div className="inline-flex flex-wrap justify-center items-center gap-3">
+                  <span
+                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                  >
+                    React JS
+                  </span>
+                  <span
+                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                  >
+                    |
+                  </span>
+                  <span
+                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                  >
+                    JavaScript
+                  </span>
+                  <span
+                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                  >
+                    |
+                  </span>
+                  <span
+                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                  >
+                    Material UI
+                  </span>
+                  <span
+                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                  >
+                    |
+                  </span>
+                  <span
+                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                  >
+                    Tailwind CSS
+                  </span>
+                </div>
               </motion.div>
             </motion.div>
           </div>
