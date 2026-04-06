@@ -1,9 +1,9 @@
 import { animate, motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Mail, Download } from "lucide-react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { useTheme } from "../../context/ThemeContext";
 import { containerVariants, itemVariants } from "../../utils/helper";
-import PROFILE_PIC from "../../assets/images/profile-pic.jpg";
+import PROFILE_PIC from "../../assets/images/profile.jpg";
 // import { div } from "framer-motion/client";
 
 export default function HeroSection() {
@@ -44,9 +44,8 @@ export default function HeroSection() {
 
   return (
     <div
-      className={`min-h-screen transition-all duration-500 ${
-        isDarkMode ? "bg-gray-950 text-white" : "bg-gray-50 text-gray-900"
-      }`}
+      className={`min-h-screen transition-all duration-500 ${isDarkMode ? "bg-gray-950 text-white" : "bg-gray-50 text-gray-900"
+        }`}
     >
       {/* Hero Section */}
       <motion.section
@@ -65,9 +64,8 @@ export default function HeroSection() {
               repeat: Infinity,
               ease: "linear",
             }}
-            className={`absolute top-20 right-20 w-64 h-64 rounded-full blur-3xl opacity-10 ${
-              isDarkMode ? "bg-blue-500" : "bg-blue-400"
-            }`}
+            className={`absolute top-20 right-20 w-64 h-64 rounded-full blur-3xl opacity-10 ${isDarkMode ? "bg-blue-500" : "bg-blue-400"
+              }`}
           />
 
           <motion.div
@@ -80,9 +78,8 @@ export default function HeroSection() {
               repeat: Infinity,
               ease: "linear",
             }}
-            className={`absolute bottom-20 left-20 w-48 h-48 rounded-full blur-3xl opacity-10 ${
-              isDarkMode ? "bg-purple-500" : "bg-purple-400"
-            }`}
+            className={`absolute bottom-20 left-20 w-48 h-48 rounded-full blur-3xl opacity-10 ${isDarkMode ? "bg-purple-500" : "bg-purple-400"
+              }`}
           />
         </div>
 
@@ -100,9 +97,8 @@ export default function HeroSection() {
                 <div className="w-32 h-32 mx-auto relative">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className={`w-full h-32 rounded-2xl overflow-hidden border-4 ${
-                      isDarkMode ? "borer-gray-800" : "border-gray-300"
-                    } shadow-2xl`}
+                    className={`w-full h-32 rounded-2xl overflow-hidden border-4 ${isDarkMode ? "borer-gray-800" : "border-gray-300"
+                      } shadow-2xl`}
                   >
                     <img
                       src={PROFILE_PIC}
@@ -127,11 +123,11 @@ export default function HeroSection() {
               {/* content - mobile */}
               <motion.div
                 variants={textVariants}
-                className={`text-sm uppercase tracking-widest ${
-                  isDarkMode ? "text-gray-500" : "text-gray-600"
-                } mb-4`}
+                className={`text-sm uppercase tracking-widest ${isDarkMode ? "text-gray-500" : "text-gray-600"
+                  } mb-4`}
               >
-                Full Stack Developer
+                <h2 className="text-2xl font-bold mt-2">Prajakta Yelgave</h2>
+                Frontend Developer
               </motion.div>
               <motion.h1
                 variants={itemVariants}
@@ -142,7 +138,7 @@ export default function HeroSection() {
                 >
                   Building digital
                 </span>
-                <span className="text-blue-500 font-medium">experiences</span>
+                <span className="text-blue-500 font-medium"> experiences</span>
                 <br />
                 <span
                   className={`${isDarkMode ? "text-white" : "text-gray-900"}`}
@@ -152,12 +148,14 @@ export default function HeroSection() {
               </motion.h1>
               <motion.p
                 variants={itemVariants}
-                className={`text-base md:text-lg ${
-                  isDarkMode ? "text-gray-400" : "text-gray-600"
-                } mb-8 max-w-xl mx-auto font-light leading-relaxed`}
+                className={`text-base md:text-lg ${isDarkMode ? "text-gray-400" : "text-gray-600"
+                  } mb-8 max-w-xl mx-auto font-light leading-relaxed`}
               >
-                I craft beautiful, functional web application with modern
-                techenologies and thoughtful user experiences.
+                Frontend developer with 2+ years of experience building
+                interactive and scalable web applications using React,
+                JavaScript, and modern UI frameworks. I specialize in creating
+                responsive interfaces, reusable components, and smooth user
+                experiences that combine functionality with clean design.
               </motion.p>
 
               {/* CTA Buttons - Mobile */}
@@ -177,14 +175,26 @@ export default function HeroSection() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => scrollToSection("contact")}
-                  className={`border ${
-                    isDarkMode
-                      ? "border-gray-700 hover:border-gray-600 text-gray-300"
-                      : "border-gray-300 hover:border-gray-400 text-gray-700"
-                  } px-6 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300`}
+                  className={`border ${isDarkMode
+                    ? "border-gray-700 hover:border-gray-600 text-gray-300"
+                    : "border-gray-300 hover:border-gray-400 text-gray-700"
+                    } px-6 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300`}
                 >
                   Get in touch
                 </motion.button>
+                <motion.a
+                  href="/resume.pdf"
+                  download
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`border ${isDarkMode
+                    ? "border-gray-700 hover:border-gray-600 text-gray-300"
+                    : "border-gray-300 hover:border-gray-400 text-gray-700"
+                    } px-6 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center gap-2`}
+                >
+                  <Download size={16} />
+                  Download Resume
+                </motion.a>
               </motion.div>
 
               {/* Social links - Mobile */}
@@ -201,11 +211,10 @@ export default function HeroSection() {
                     key={index}
                     href={social.href}
                     whileHover={{ y: -3, scale: 1.1 }}
-                    className={`p-3 rounded-full transition-colors ${
-                      isDarkMode
-                        ? "text-gray-400 hover:text-white hover:bg-gray-800"
-                        : "tet-gray-600 hover:text-gray-900 hover:bg-gray-200"
-                    }`}
+                    className={`p-3 rounded-full transition-colors ${isDarkMode
+                      ? "text-gray-400 hover:text-white hover:bg-gray-800"
+                      : "tet-gray-600 hover:text-gray-900 hover:bg-gray-200"
+                      }`}
                   >
                     <social.icon size={20} />
                   </motion.a>
@@ -220,22 +229,12 @@ export default function HeroSection() {
                 <span
                   className={isDarkMode ? "text-gray-600" : "text-gray-500"}
                 >
-                  React
+                  React JS
                 </span>
                 <span
                   className={isDarkMode ? "text-gray-700" : "text-gray-400"}
                 >
-                  .
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-600" : "text-gray-500"}
-                >
-                  Node js
-                </span>
-                <span
-                  className={isDarkMode ? "text-gray-700" : "text-gray-400"}
-                >
-                  .
+                  |
                 </span>
                 <span
                   className={isDarkMode ? "text-gray-600" : "text-gray-500"}
@@ -245,12 +244,22 @@ export default function HeroSection() {
                 <span
                   className={isDarkMode ? "text-gray-700" : "text-gray-400"}
                 >
-                  .
+                  |
                 </span>
                 <span
                   className={isDarkMode ? "text-gray-600" : "text-gray-500"}
                 >
-                  Mongodb
+                  Material UI
+                </span>
+                <span
+                  className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                >
+                  |
+                </span>
+                <span
+                  className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                >
+                  Tailwind CSS
                 </span>
               </motion.div>
             </motion.div>
@@ -265,13 +274,13 @@ export default function HeroSection() {
               variants={containerVariants}
               className="text-left"
             >
+              {/* <h2 className="text-xl text-gray-500">Hi, I'm</h2> */}
               <motion.div
                 variants={textVariants}
-                className={`text-sm uppercase tracking-widest ${
-                  isDarkMode ? "text-gray-500" : "text-gray-600"
-                }`}
+                className={`text-[19px] uppercase tracking-widest ${isDarkMode ? "text-gray-500" : "text-gray-600"
+                  }`}
               >
-                Full Stack Developer
+                Frontend Developer
               </motion.div>
 
               <motion.h1
@@ -290,12 +299,20 @@ export default function HeroSection() {
               </motion.h1>
               <motion.p
                 variants={itemVariants}
-                className={`text-xl ${
-                  isDarkMode ? "text-gray-400" : "text-gray-600"
-                } mb-12 font-light leading-relaxed max-w-lg`}
+                className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"
+                  } mb-12 font-light leading-relaxed max-w-lg`}
               >
-                I craft beautiful, functional web application with modern
-                techenologies and thoughtful user experiences.
+                <motion.p
+                  variants={itemVariants}
+                  className={`text-base md:text-lg ${isDarkMode ? "text-gray-400" : "text-gray-600"
+                    } mb-8 max-w-xl mx-auto font-light leading-relaxed`}
+                >
+                  Frontend developer with 2+ years of experience building
+                  interactive and scalable web applications using React,
+                  JavaScript, and modern UI frameworks. I specialize in creating
+                  responsive interfaces, reusable components, and smooth user
+                  experiences that combine functionality with clean design.
+                </motion.p>
               </motion.p>
 
               {/* CTA Buttons - Desktop */}
@@ -312,14 +329,26 @@ export default function HeroSection() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => scrollToSection("contact")}
-                  className={`border ${
-                    isDarkMode
-                      ? "border-gray-700 hover:border-gray-600 text-gray-300"
-                      : "border-gray-300 hover:border-gray-400 text-gray-700"
-                  } px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300`}
+                  className={`border ${isDarkMode
+                    ? "border-gray-700 hover:border-gray-600 text-gray-300"
+                    : "border-gray-300 hover:border-gray-400 text-gray-700"
+                    } px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300`}
                 >
                   Get in touch
                 </motion.button>
+                <motion.a
+                  href="/resume.pdf"
+                  download
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`border ${isDarkMode
+                    ? "border-gray-700 hover:border-gray-600 text-gray-300"
+                    : "border-gray-300 hover:border-gray-400 text-gray-700"
+                    } px-8 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center gap-2`}
+                >
+                  <Download size={16} />
+                  Download Resume
+                </motion.a>
               </motion.div>
 
               {/* Social links */}
@@ -336,11 +365,10 @@ export default function HeroSection() {
                     key={index}
                     href={social.href}
                     whileHover={{ y: -3, scale: 1.1 }}
-                    className={`p-3 rounded-full transition-colors ${
-                      isDarkMode
-                        ? "text-gray-400 hover:text-white hover:bg-gray-800"
-                        : "tet-gray-600 hover:text-gray-900 hover:bg-gray-200"
-                    }`}
+                    className={`p-3 rounded-full transition-colors ${isDarkMode
+                      ? "text-gray-400 hover:text-white hover:bg-gray-800"
+                      : "tet-gray-600 hover:text-gray-900 hover:bg-gray-200"
+                      }`}
                   >
                     <social.icon size={20} />
                   </motion.a>
@@ -359,27 +387,17 @@ export default function HeroSection() {
                 {/* Tech stack - Desktop */}
                 <motion.div
                   variants={itemVariants}
-                  className="flex items-center space-x-5 text-sm uppercase tracking-widest absolute -top-16 -left-28"
+                  className="flex items-center space-x-5 text-sm uppercase tracking-widest absolute -top-32 -left-60"
                 >
                   <span
                     className={isDarkMode ? "text-gray-600" : "text-gray-500"}
                   >
-                    React
+                    React JS
                   </span>
                   <span
                     className={isDarkMode ? "text-gray-700" : "text-gray-400"}
                   >
-                    .
-                  </span>
-                  <span
-                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
-                  >
-                    Node JS
-                  </span>
-                  <span
-                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
-                  >
-                    .
+                    |
                   </span>
                   <span
                     className={isDarkMode ? "text-gray-600" : "text-gray-500"}
@@ -389,24 +407,33 @@ export default function HeroSection() {
                   <span
                     className={isDarkMode ? "text-gray-700" : "text-gray-400"}
                   >
-                    .
+                    |
                   </span>
                   <span
                     className={isDarkMode ? "text-gray-600" : "text-gray-500"}
                   >
-                    Mongodb
+                    Material UI
+                  </span>
+                  <span
+                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                  >
+                    |
+                  </span>
+                  <span
+                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                  >
+                    Tailwind CSS
                   </span>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className={`w-80 h-96 rounded-3xl overflow-hidden border-4 ${
-                    isDarkMode ? "border-gray-800" : "border-gray-300"
-                  } shadow-2xl`}
+                  className={`w-70 h-80 -mt-10 rounded-3xl overflow-hidden border-4 ${isDarkMode ? "border-gray-800" : "border-gray-300"
+                    } shadow-2xl`}
                 >
                   <img
                     src={PROFILE_PIC}
                     alt="Profile"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-scale-down"
                   />
                   {/* Decorative ring */}
                   <motion.div
