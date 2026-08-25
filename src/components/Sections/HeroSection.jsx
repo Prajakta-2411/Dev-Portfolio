@@ -183,7 +183,7 @@ export default function HeroSection() {
                   Get in touch
                 </motion.button>
                 <motion.a
-                  href="/resume.pdf"
+                  href="/FrontendDev_Prajakta.pdf"
                   download
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
@@ -339,7 +339,7 @@ export default function HeroSection() {
                   Get in touch
                 </motion.button>
                 <motion.a
-                  href="/resume.pdf"
+                  href="/FrontendDev_Prajakta.pdf"
                   download
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
